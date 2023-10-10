@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #c2c2c2;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    gap: 10px; 
+    width: max-content;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.card.unflipped {
+    background-color: darkslategray;
+    cursor: pointer;
+    width: 80px;
+    height: 100px;
+    border-radius: 5px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 0.5s;
+    /* backface-visibility: hidden; */
+}
+
+.card.unflipped img {
+    display: none;
+    transform: rotateY(180deg);
+}
+
+.card.flipped {
+    perspective: 1000px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.card.flipped img {
+    display: block;
+    transform: rotateY(180deg);
+}
+
+.card.unflipped:hover {
+    background-color: #243434;
+    transform: translateY(-5px);
+}
+
+img{
+    height: 100px;
+    width: 80px;
+    border-radius: 5px;
+}
+
+#restartButton {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    background-color: darkslategray;
+    border-radius: 5px;
+    top: 10px;
+    left: 10px;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+}
+
+#restartButton img {
+    width: 30px;
+    height: 30px;
+}
+
+#restartButton:hover{
+    background-color: #243434;
+    transform: translateY(-5px);
+    transition: transform 0.5s;
+}
